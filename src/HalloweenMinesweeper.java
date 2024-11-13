@@ -16,7 +16,9 @@ public class HalloweenMinesweeper extends JFrame {
         setVisible(true);
     }
 
-
+    public static void main(String[] args) {
+    new HalloweenMinesweeper();
+}
 
     private void mostrarToast(String mensaje) {
         // Crear una ventana temporal para el "toast"
