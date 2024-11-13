@@ -45,15 +45,4 @@ public class HalloweenMinesweeper extends JFrame {
         toast.setVisible(true);
         new Timer(2000, e -> toast.setVisible(false)).start(); // Oculta el toast tras 2 segundos
     }
-
-    private boolean haGanado() {
-        for (int i = 0; i < GRID_SIZE; i++) {
-            for (int j = 0; j < GRID_SIZE; j++) {
-                if (!minas[i][j] && botones[i][j].isEnabled()) {
-                    return false; // Si quedan botones sin descubrir, no ha ganado
-                }
-            }
-        }
-        return true;
-    }
 }
