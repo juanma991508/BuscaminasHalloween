@@ -8,7 +8,12 @@ public class HalloweenMinesweeper extends JFrame {
 
     public HalloweenMinesweeper() {
         super();
+        setTitle("Halloween Minesweeper");
+        setSize(500, 500);
+        setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        setLocationRelativeTo(null);
 
+        setVisible(true);
     }
 
 
@@ -37,5 +42,16 @@ public class HalloweenMinesweeper extends JFrame {
         // Mostrar el "toast" por un tiempo limitado
         toast.setVisible(true);
         new Timer(2000, e -> toast.setVisible(false)).start(); // Oculta el toast tras 2 segundos
+    }
+
+    private boolean haGanado() {
+        for (int i = 0; i < GRID_SIZE; i++) {
+            for (int j = 0; j < GRID_SIZE; j++) {
+                if (!minas[i][j] && botones[i][j].isEnabled()) {
+                    return false; // Si quedan botones sin descubrir, no ha ganado
+                }
+            }
+        }
+        return true;
     }
 }
